@@ -4,9 +4,39 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #666;
+  background-color: #689fe6;
   font-family: 'Montserrat',
   sans-serif;
+  font-size: 25px;
   color: white;
   text-align: center;
+}
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App > * {
+  margin: 10px 0;
+}
+.app-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.app-info > * {
+  margin: 0 30px;
+}
+.timezone{
+  width: 200px;
+  height: 40px;
+  font-size: 25px;
+}
+.icon{
+  width: 100px;
+  height: 100px;
 }
