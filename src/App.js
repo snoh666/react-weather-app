@@ -34,7 +34,6 @@ const App = () => {
           .then(response => {
             return response.json();
           }).then(data => {
-            console.log(data);
             if(clock.length !== 1) {
               let hours = new Date().getHours();
               let minutes = new Date().getMinutes();
