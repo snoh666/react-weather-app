@@ -3,6 +3,7 @@ import Skycons from 'react-skycons';
 
 
 const App = () => {
+  const proxyHeroku = `https://cors-anywhere.herokuapp.com/`;
   const [weatherData, setWeatherData] = useState([]);
   const [refresh, setRefresh] = useState(0);
   const getRefresh = e => {
@@ -17,13 +18,12 @@ const App = () => {
   const update = () => {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(data => {
-        fetch(`https://api.darksky.net/forecast/56be0ef4bc8f4cdffa9f0de805515c04/${data.coords.latitude},${data.coords.longitude}`, {mode: 'no-cors'})
+        fetch(`${proxyHeroku}https://api.darksky.net/forecast/56be0ef4bc8f4cdffa9f0de805515c04/${data.coords.latitude},${data.coords.longitude}`)
           .then(response => {
             return response.json();
           }).then(data => {
             let weatherDataFromFetch = [data.timezone, data.currently.icon, data.currently.temperature + ' F'];
             setWeatherData(weatherDataFromFetch);
-            console.log(weatherData);
           }).catch( err => console.log(err));
       });
     }
