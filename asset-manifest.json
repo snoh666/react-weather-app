@@ -1,13 +1,13 @@
 {
-  "main.css": "/snoh666/react-weather-app.git/static/css/main.46aaf64b.chunk.css",
-  "main.js": "/snoh666/react-weather-app.git/static/js/main.ec3fab28.chunk.js",
-  "main.js.map": "/snoh666/react-weather-app.git/static/js/main.ec3fab28.chunk.js.map",
-  "runtime~main.js": "/snoh666/react-weather-app.git/static/js/runtime~main.0dc1cfae.js",
-  "runtime~main.js.map": "/snoh666/react-weather-app.git/static/js/runtime~main.0dc1cfae.js.map",
-  "static/js/2.45c05ca8.chunk.js": "/snoh666/react-weather-app.git/static/js/2.45c05ca8.chunk.js",
-  "static/js/2.45c05ca8.chunk.js.map": "/snoh666/react-weather-app.git/static/js/2.45c05ca8.chunk.js.map",
-  "index.html": "/snoh666/react-weather-app.git/index.html",
-  "precache-manifest.3c9894c01b5105848f9ed58b29aff818.js": "/snoh666/react-weather-app.git/precache-manifest.3c9894c01b5105848f9ed58b29aff818.js",
-  "service-worker.js": "/snoh666/react-weather-app.git/service-worker.js",
-  "static/css/main.46aaf64b.chunk.css.map": "/snoh666/react-weather-app.git/static/css/main.46aaf64b.chunk.css.map"
+  "main.css": "/react-weather-app/static/css/main.46aaf64b.chunk.css",
+  "main.js": "/react-weather-app/static/js/main.b6f0fe47.chunk.js",
+  "main.js.map": "/react-weather-app/static/js/main.b6f0fe47.chunk.js.map",
+  "runtime~main.js": "/react-weather-app/static/js/runtime~main.7e96bc80.js",
+  "runtime~main.js.map": "/react-weather-app/static/js/runtime~main.7e96bc80.js.map",
+  "static/js/2.45c05ca8.chunk.js": "/react-weather-app/static/js/2.45c05ca8.chunk.js",
+  "static/js/2.45c05ca8.chunk.js.map": "/react-weather-app/static/js/2.45c05ca8.chunk.js.map",
+  "index.html": "/react-weather-app/index.html",
+  "precache-manifest.596bbb448459556f6e912b74120a3e11.js": "/react-weather-app/precache-manifest.596bbb448459556f6e912b74120a3e11.js",
+  "service-worker.js": "/react-weather-app/service-worker.js",
+  "static/css/main.46aaf64b.chunk.css.map": "/react-weather-app/static/css/main.46aaf64b.chunk.css.map"
 }
