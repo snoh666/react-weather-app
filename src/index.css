@@ -37,6 +37,19 @@ body{
   font-size: 25px;
 }
 .icon{
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 150px;
+}
+button{
+  width: 150px;
+  height: 30px;
+  background: none;
+  border: 2px solid #fff;
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+button:hover{
+  background: #ffffff79;
 }

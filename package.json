@@ -6,7 +6,8 @@
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-skycons": "^0.7.0"
   },
   "homepage": "https://github.com/snoh666/react-weather-app.git",
   "scripts": {
