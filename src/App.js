@@ -7,6 +7,7 @@ const App = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [refresh, setRefresh] = useState(0);
   const [temperature, setTempereture] = useState([]);
+  const [clock, setClock] = useState([]);
   const getRefresh = e => {
     e.preventDefault();
     setRefresh(refresh + 1);
@@ -33,7 +34,21 @@ const App = () => {
           .then(response => {
             return response.json();
           }).then(data => {
-            let weatherDataFromFetch = [data.timezone, data.currently.icon];
+            console.log(data);
+            if(clock.length !== 1) {
+              let hours = new Date().getHours();
+              let minutes = new Date().getMinutes();
+
+              if(hours <= 9) {
+                hours = '0' + hours;
+              }
+              if(minutes <= 9) {
+                minutes = '0' + minutes;
+              }
+              setClock([hours, minutes]);
+            }
+
+            let weatherDataFromFetch = [data.timezone, data.currently.icon, data.currently.summary];
             setTempereture([data.currently.temperature, 'Fahr']);
             setWeatherData(weatherDataFromFetch);
           }).catch( err => console.log(err));
@@ -55,12 +70,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <button onClick={getRefresh}>Refresh</button>
-      <div className="app-info">
+      <div className="clock">
         <div className="timezone">
           <div className="timezone-info">Timezone:</div>
           {weatherData[0]}
         </div>
+        {clock.join(':')}</div>
+      <button onClick={getRefresh}>Refresh</button>
+      <div className="app-info">
+        <h1>{weatherData[2]}</h1>
         <div className="icon">{setSkycon(weatherData[1])}</div>
       </div>
       <div className="temperature" onClick={temperatureChange}>

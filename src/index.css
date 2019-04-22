@@ -25,16 +25,20 @@ body{
   align-items: center;
   justify-content: center;
 }
+.clock{
+  position: fixed;
+  top: 0px;
+  right: 5px;
+  height: 100px;
+}
 .timezone{
   width: 200px;
-  height: 40px;
+  height: 50px;
   font-size: 25px;
-  position: relative;
+  margin-bottom: 10px;
 }
 .timezone-info{
-  position: absolute;
-  top: -20px;
-  width: 200px;
+  width: 100%;
   text-align: center;
   font-size: 17px;
 }
@@ -46,15 +50,45 @@ button{
   width: 150px;
   height: 30px;
   background: none;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
+  border-top: none;
+  border-bottom: none;
   color: white;
   font-size: 21px;
   cursor: pointer;
   transition: all .4s ease-in-out;
   margin: 30px 0;
+  position: relative;
 }
-button:hover{
-  background: #ffffff79;
+button::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  top: -1px;
+  left: -1px;
+  background-color: #fff;
+  transition: all .4s ease;
+}
+button::after{
+  display: block;
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  bottom: -1px;
+  left: -1px;
+  background-color: #fff;
+  transition: all .4s ease;
+}
+button:hover::before {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+button:hover::after{
+  transform: translateY(50px);
+  opacity: 0;
 }
 .temperature{
   margin: 15px 0;
