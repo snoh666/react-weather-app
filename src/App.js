@@ -33,7 +33,6 @@ const App = () => {
           .then(response => {
             return response.json();
           }).then(data => {
-            console.log(data);
             let weatherDataFromFetch = [data.timezone, data.currently.icon];
             setTempereture([data.currently.temperature, 'Fahr']);
             setWeatherData(weatherDataFromFetch);
