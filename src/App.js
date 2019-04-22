@@ -17,7 +17,7 @@ const App = () => {
   const update = () => {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(data => {
-        fetch(`https://api.darksky.net/forecast/56be0ef4bc8f4cdffa9f0de805515c04/${data.coords.latitude},${data.coords.longitude}`)
+        fetch(`https://api.darksky.net/forecast/56be0ef4bc8f4cdffa9f0de805515c04/${data.coords.latitude},${data.coords.longitude}`, {mode: 'no-cors'})
           .then(response => {
             return response.json();
           }).then(data => {
