@@ -108,4 +108,7 @@ button:hover::after{
   .app-info{
     flex-direction: column;
   }
+  .clock{
+    position: static;
+  }
 }

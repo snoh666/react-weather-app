@@ -48,7 +48,14 @@ const App = () => {
             }
 
             let weatherDataFromFetch = [data.timezone, data.currently.icon, data.currently.summary];
-            setTempereture([data.currently.temperature, 'Fahr']);
+            if(temperature.length === 2) {
+              if(temperature[1] === 'Cels') {
+                let celsiusTemperature = (data.currently.temperature - 32) * 5 / 9;
+                setTempereture([celsiusTemperature.toFixed(), 'Cels']);
+              }
+            } else {
+              setTempereture([data.currently.temperature, 'Fahr']);
+            }
             setWeatherData(weatherDataFromFetch);
           }).catch( err => console.log(err));
       });
