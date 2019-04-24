@@ -1,6 +1,7 @@
 {
   "short_name": "Weather App",
   "name": "React Weather App",
+  "display": "standalone",
   "icons": [
     {
       "src": "favicon.ico",
