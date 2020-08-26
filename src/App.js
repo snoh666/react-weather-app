@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Skycons from 'react-skycons';
 import Timezone from "./components/Timezone";
 import Clock from "./components/Clock";
+import Information from "./components/Information";
 
 
 const App = () => {
@@ -67,18 +67,6 @@ const App = () => {
       });
     }
   };
-  const setSkycon = (iconId) => {
-    if(iconId !== undefined) {
-      let iconIdFixed = iconId.toUpperCase().replace('-', '_');
-      return (
-        <Skycons color="white" autoplay={true} icon={iconIdFixed} />
-      );
-    } else {
-      return (
-        <h2>Icon unavaible allow location get or wait for database connection..</h2>
-      );
-    }
-  };
 
   return (
     <div className="App">
@@ -87,10 +75,7 @@ const App = () => {
         <Clock clockValue={clock.join(':')} />
       </div>
       <button onClick={getRefresh}>Refresh</button>
-      <div className="app-info">
-        <h1>{weatherData.summary}</h1>
-        <div className="icon">{setSkycon(weatherData.icon)}</div>
-      </div>
+      <Information icon={weatherData.icon} summary={weatherData.summary} />
       <div className="temperature" onClick={temperatureChange}>
         <div className="temperature-info">Click to convert</div>
         {temperature.join(' ')}
