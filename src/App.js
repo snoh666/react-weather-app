@@ -20,7 +20,7 @@ const App = () => {
   }, [refresh]);
 
   const temperatureChange = () => {
-    if(temperature[1] === 'Fahr') {
+    if (temperature[1] === 'Fahr') {
       let temperatureCels = (temperature[0]-32)*5/9;
       setTempereture([temperatureCels.toFixed(), 'Cels']);
     } else if (temperature[1] === 'Cels') {
@@ -36,14 +36,14 @@ const App = () => {
           .then(response => {
             return response.json();
           }).then(data => {
-            if(clock.length !== 1) {
+            if (clock.length !== 1) {
               let hours = new Date().getHours();
               let minutes = new Date().getMinutes();
 
-              if(hours <= 9) {
+              if (hours <= 9) {
                 hours = '0' + hours;
               }
-              if(minutes <= 9) {
+              if (minutes <= 9) {
                 minutes = '0' + minutes;
               }
               setClock([hours, minutes]);
@@ -54,8 +54,8 @@ const App = () => {
               icon: data.currently.icon,
               summary: data.currently.summary,
             };
-            if(temperature.length === 2) {
-              if(temperature[1] === 'Cels') {
+            if (temperature.length === 2) {
+              if (temperature[1] === 'Cels') {
                 let celsiusTemperature = (data.currently.temperature - 32) * 5 / 9;
                 setTempereture([celsiusTemperature.toFixed(), 'Cels']);
               }
