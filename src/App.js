@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Skycons from 'react-skycons';
 import Timezone from "./components/Timezone";
+import Clock from "./components/Clock";
 
 
 const App = () => {
@@ -79,7 +80,8 @@ const App = () => {
     <div className="App">
       <div className="clock">
         <Timezone timezone={weatherData[0]} />
-        {clock.join(':')}</div>
+        <Clock clockValue={clock.join(':')} />
+      </div>
       <button onClick={getRefresh}>Refresh</button>
       <div className="app-info">
         <h1>{weatherData[2]}</h1>
