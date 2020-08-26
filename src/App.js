@@ -6,7 +6,7 @@ import Clock from "./components/Clock";
 
 const App = () => {
   const proxyHeroku = `https://cors-anywhere.herokuapp.com/`;
-  const [weatherData, setWeatherData] = useState([]);
+  const [weatherData, setWeatherData] = useState({});
   const [refresh, setRefresh] = useState(0);
   const [temperature, setTempereture] = useState([]);
   const [clock, setClock] = useState([]);
@@ -49,7 +49,11 @@ const App = () => {
               setClock([hours, minutes]);
             }
 
-            let weatherDataFromFetch = [data.timezone, data.currently.icon, data.currently.summary];
+            let weatherDataFromFetch = {
+              timezone: data.timezone,
+              icon: data.currently.icon,
+              summary: data.currently.summary,
+            };
             if(temperature.length === 2) {
               if(temperature[1] === 'Cels') {
                 let celsiusTemperature = (data.currently.temperature - 32) * 5 / 9;
@@ -79,13 +83,13 @@ const App = () => {
   return (
     <div className="App">
       <div className="clock">
-        <Timezone timezone={weatherData[0]} />
+        <Timezone timezone={weatherData.timezone} />
         <Clock clockValue={clock.join(':')} />
       </div>
       <button onClick={getRefresh}>Refresh</button>
       <div className="app-info">
-        <h1>{weatherData[2]}</h1>
-        <div className="icon">{setSkycon(weatherData[1])}</div>
+        <h1>{weatherData.summary}</h1>
+        <div className="icon">{setSkycon(weatherData.icon)}</div>
       </div>
       <div className="temperature" onClick={temperatureChange}>
         <div className="temperature-info">Click to convert</div>
