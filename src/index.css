@@ -46,6 +46,16 @@ body{
   width: 300px;
   height: 150px;
 }
+.icon h2 
+{
+  width: 450px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 button{
   width: 150px;
   height: 30px;
@@ -110,5 +120,9 @@ button:hover::after{
   }
   .clock{
     position: static;
+  }
+  .icon h2
+  {
+    margin-top: 50px;
   }
 }
