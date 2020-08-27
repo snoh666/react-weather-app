@@ -74,12 +74,12 @@ const App = () => {
         <Timezone timezone={weatherData.timezone} />
         <Clock clockValue={clock.join(':')} />
       </div>
-      <button onClick={getRefresh}><span className="inscription">Refresh</span><span className="leftborder"></span><span className="rightborder"></span></button>
+      <button className="buttonreset" onClick={getRefresh}><span className="inscription">Refresh</span><span className="leftborder"></span><span className="rightborder"></span></button>
       <Information icon={weatherData.icon} summary={weatherData.summary} />
-      <div className="temperature" onClick={temperatureChange}>
+      <button className="temperature" onClick={temperatureChange}>
         <div className="temperature-info">Click to convert</div>
         {temperature.join(' ')}
-      </div>
+      </button>
     </div>
   );
 }

@@ -46,7 +46,7 @@ body{
   width: 300px;
   height: 150px;
 }
-button{
+.buttonreset{
   width: 125px;
   height: 30px;
   color: white;
@@ -60,7 +60,7 @@ button{
   background-color: #ddd;
   background: none;
 }
-button::after
+.buttonreset::after
 {
   content: "";
   width: 2px;
@@ -71,11 +71,11 @@ button::after
   left: 0;
 
 }
-button:hover::after
+.buttonreset:hover::after
 {
   animation: underline1 .1s linear ;
 }
-button::before
+.buttonreset::before
 {
   content: "";
   position: absolute;
@@ -86,12 +86,12 @@ button::before
   background-color: rgb(255, 255, 255);
   transition: .1s .1s linear;
 }
-button:hover::before
+.buttonreset:hover::before
 {
   left: 50%;
   transform: translateX(-50%);
 }
-button .leftborder
+.buttonreset .leftborder
 {
   position: absolute;
   top: 100%;
@@ -100,11 +100,11 @@ button .leftborder
   height: 50%;
   background-color: rgb(255, 255, 255);
 }
-button:hover .leftborder
+.buttonreset:hover .leftborder
 {
   animation: underline3 .1s .2s linear ;
 }
-button .rightborder
+.buttonreset .rightborder
 {
   content: "";
   position: absolute;
@@ -114,31 +114,34 @@ button .rightborder
   height: 2px;
   background-color: rgb(255, 255, 255);
 }
-button:hover .rightborder
+.buttonreset:hover .rightborder
 {
   animation: underline4 .1s .3s linear ;
 }
-button .inscription
+.buttonreset .inscription
 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-button:hover .inscription
+.buttonreset:hover .inscription
 {
   animation: buttonAnimation .5s  .3s linear ;
-  
 }
 .temperature{
   margin: 15px 0;
-  width: 200px;
+  width: 150px;
   height: 50px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   font-size: 25px;
+  color: white;
+  background: none;
+  border-style: none;
+  outline: none;
   cursor: pointer;
 }
 .temperature-info{
