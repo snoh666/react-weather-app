@@ -74,7 +74,7 @@ const App = () => {
         <Timezone timezone={weatherData.timezone} />
         <Clock clockValue={clock.join(':')} />
       </div>
-      <button onClick={getRefresh}>Refresh</button>
+      <button onClick={getRefresh}><a>Refresh</a>  <span></span>  <span></span> </button>
       <Information icon={weatherData.icon} summary={weatherData.summary} />
       <div className="temperature" onClick={temperatureChange}>
         <div className="temperature-info">Click to convert</div>

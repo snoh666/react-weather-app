@@ -47,49 +47,105 @@ body{
   height: 150px;
 }
 button{
-  width: 150px;
+  width: 125px;
   height: 30px;
-  background: none;
-  border: 1px solid #fff;
-  border-top: none;
-  border-bottom: none;
   color: white;
   font-size: 21px;
   cursor: pointer;
-  transition: all .4s ease-in-out;
   margin: 30px 0;
   position: relative;
+  outline: none;
+  overflow: hidden;
+  border-style: none;
+  background-color: #ddd;
+  background: none;
+
+
 }
-button::before {
-  display: block;
-  content: '';
+button::after
+{
+  content: "";
+  width: 2px;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
   position: absolute;
-  width: 150px;
-  height: 1px;
-  top: -1px;
-  left: -1px;
-  background-color: #fff;
-  transition: all .4s ease;
+  top: -100%;
+  left: 0;
+
 }
-button::after{
-  display: block;
-  content: '';
+button:hover::after
+{
+  animation: underline1 .1s linear ;
+
+}
+button::before
+{
+  content: "";
   position: absolute;
-  width: 150px;
-  height: 1px;
-  bottom: -1px;
-  left: -1px;
-  background-color: #fff;
-  transition: all .4s ease;
+  top: calc(100% - 2px);
+  left: -100%;
+  width: 50%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transition: .1s .1s linear;
 }
-button:hover::before {
-  transform: translateY(-50px);
-  opacity: 0;
+button:hover::before
+{
+ 
+  left: 50%;
+  transform: translateX(-50%);
+
 }
-button:hover::after{
-  transform: translateY(50px);
-  opacity: 0;
+
+button span
+{
+  position: absolute;
+  top: 100%;
+  left: calc(100% - 2px);
+  width: 2px;
+  height: 50%;
+  background-color: rgb(255, 255, 255);
 }
+button:hover span 
+{
+  animation: underline3 .1s .2s linear ;
+}
+
+button span:nth-child(2)
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 50%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+}
+button:hover span:nth-child(2)
+{
+  animation: underline4 .1s .3s linear ;
+}
+
+
+
+
+
+
+button a 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+button:hover a 
+{
+  animation: buttonAnimation .5s  .3s linear ;
+  
+}
+
+
+
 .temperature{
   margin: 15px 0;
   width: 200px;
@@ -110,5 +166,92 @@ button:hover::after{
   }
   .clock{
     position: static;
+  }
+}
+
+@keyframes buttonAnimation 
+{
+  0%
+  {
+    top: 50%;
+  }
+
+ 
+  11.111%
+  {
+    top: -50%;
+
+  }
+  22.222%
+  {
+    top: -50%;
+    left:50% 
+  }
+  33.333%
+  {
+    top: -50%;
+    left: 150%;
+  }
+  44.444%
+  {
+    left: 150%;
+    top: -50%
+  }
+  55.555% 
+  {
+    left: 150%;
+    top:150%
+  }
+  66.666%
+  {
+    left: 150%;
+    top:150%
+  }
+  77.777% 
+  {
+    left: 50%;
+    top:150%
+  }
+  88.888% 
+  {
+    top:150%
+
+  }
+  99.999% 
+  {
+    top:50%;
+
+  }
+ 
+}
+@keyframes underline1
+{
+  0%
+  {
+    
+
+  }
+  100% 
+  {
+    top: 100%;
+  }
+}
+@keyframes underline3 
+{
+  0% 
+  {}
+  100% 
+  {
+    top: 0;
+  }
+}
+
+@keyframes underline4 
+{
+  0%
+  {}
+  100% 
+  {
+    left: 0;
   }
 }
