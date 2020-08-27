@@ -59,8 +59,6 @@ button{
   border-style: none;
   background-color: #ddd;
   background: none;
-
-
 }
 button::after
 {
@@ -76,7 +74,6 @@ button::after
 button:hover::after
 {
   animation: underline1 .1s linear ;
-
 }
 button::before
 {
@@ -91,13 +88,10 @@ button::before
 }
 button:hover::before
 {
- 
   left: 50%;
   transform: translateX(-50%);
-
 }
-
-button span
+button .leftborder
 {
   position: absolute;
   top: 100%;
@@ -106,12 +100,11 @@ button span
   height: 50%;
   background-color: rgb(255, 255, 255);
 }
-button:hover span 
+button:hover .leftborder
 {
   animation: underline3 .1s .2s linear ;
 }
-
-button span:nth-child(2)
+button .rightborder
 {
   content: "";
   position: absolute;
@@ -121,31 +114,22 @@ button span:nth-child(2)
   height: 2px;
   background-color: rgb(255, 255, 255);
 }
-button:hover span:nth-child(2)
+button:hover .rightborder
 {
   animation: underline4 .1s .3s linear ;
 }
-
-
-
-
-
-
-button a 
+button .inscription
 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-button:hover a 
+button:hover .inscription
 {
   animation: buttonAnimation .5s  .3s linear ;
   
 }
-
-
-
 .temperature{
   margin: 15px 0;
   width: 200px;
@@ -168,15 +152,12 @@ button:hover a
     position: static;
   }
 }
-
 @keyframes buttonAnimation 
 {
   0%
   {
     top: 50%;
   }
-
- 
   11.111%
   {
     top: -50%;
@@ -227,10 +208,7 @@ button:hover a
 @keyframes underline1
 {
   0%
-  {
-    
-
-  }
+  {}
   100% 
   {
     top: 100%;
@@ -245,7 +223,6 @@ button:hover a
     top: 0;
   }
 }
-
 @keyframes underline4 
 {
   0%
